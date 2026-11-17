@@ -21,11 +21,7 @@ def main():
     args = parser.parse_args()
 
     if args.all:
-        args.load_data = True
-        args.prepare = True
-        args.train = True
-        args.load = True
-        args.evaluate = True
+        args.load_data = args.prepare = args.train = args.load = 		args.evaluate = True
 
     if args.load_data:
         load_data()
