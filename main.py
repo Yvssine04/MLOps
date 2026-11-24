@@ -15,13 +15,15 @@ def main():
     parser.add_argument("--load_data", action="store_true", help="Load the CSV file")
     parser.add_argument("--prepare", action="store_true", help="Prepare the data")
     parser.add_argument("--train", action="store_true", help="Train and save the model")
-    parser.add_argument("--evaluate", action="store_true", help="Evaluate the saved model")
+    parser.add_argument(
+        "--evaluate", action="store_true", help="Evaluate the saved model"
+    )
     parser.add_argument("--load", action="store_true", help="Load the saved model")
     parser.add_argument("--all", action="store_true", help="Run the full pipeline")
     args = parser.parse_args()
 
     if args.all:
-        args.load_data = args.prepare = args.train = args.load = 		args.evaluate = True
+        args.load_data = args.prepare = args.train = args.load = args.evaluate = True
 
     if args.load_data:
         load_data()
